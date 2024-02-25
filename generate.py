@@ -1,9 +1,10 @@
 """
 Usage:
-    generate.py <grammer_file> [-n NUMBER]
+    generate.py <grammer_file> [-n NUMBER] [-t]
 
 Options:
     -n NUMBER  Number of sentences to generate [default: 1]
+    -t  generate the tree structures that generates the sentences
 """
 
 
@@ -37,14 +38,18 @@ class PCFG(object):
 
     def is_terminal(self, symbol): return symbol not in self._rules
 
-    def gen(self, symbol):
+    def gen(self, symbol, gen_tree=False):
         if self.is_terminal(symbol): return symbol
         else:
             expansion = self.random_expansion(symbol)
-            return " ".join(self.gen(s) for s in expansion)
+            result = " ".join(self.gen(s,gen_tree) for s in expansion)
+            if gen_tree:
+                result = f'({symbol} {result})'
+            
+            return result
 
-    def random_sent(self):
-        return self.gen("ROOT")
+    def random_sent(self, gen_tree=False):
+        return self.gen("ROOT", gen_tree)
 
     def random_expansion(self, symbol):
         """
@@ -61,8 +66,9 @@ if __name__ == '__main__':
 
     import sys
     args = docopt(__doc__)
-    # args = {'<grammer_file>': 'grammar.txt', '-n': 3}
+    # args = {'<grammer_file>': 'grammar2', '-n': 3, '-t': True}
     pcfg = PCFG.from_file(args['<grammer_file>'])
     num_of_sentences = int(args['-n'])
-    sentences = '\n'.join(pcfg.random_sent() for i in range(num_of_sentences))
+    gen_tree = args['-t']
+    sentences = '\n'.join(pcfg.random_sent(gen_tree) for i in range(num_of_sentences))
     print(sentences)
