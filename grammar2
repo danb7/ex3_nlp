@@ -51,7 +51,7 @@
 1   VP  Vbz ADJP  # NEW - from sentence (h)
 1   VP  Vbz Vbg NP  # NEW - from sentence (i), "is XXing YYY"
 1   VP  Vbz NP  # NEW - from sentence (j), "is YYY"
-1	NP	Det Noun
+5	NP	Det Noun
 2	NP	NP PP
 1   NP  Nnp  # NEW - from sentence (a), personal name (Sally)
 1   NP  NP Cc NP  # NEW - from sentence (b), coordinating conjunction
