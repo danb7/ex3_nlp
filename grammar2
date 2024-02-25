@@ -36,20 +36,34 @@
 #    V0 = intransitive verb phrase  # NEW
 #    Sc = subordinating conjunction  # NEW
 #    Prp = personal pronoun  # NEW
+#    Rb = adverb  # NEW
+#    ADVP = adverb phrase  # NEW
+#    ADJP = adjectival phrase  # NEW
+#    Vbz = Verb, 3rd person singular present  # NEW
+#    Vbg = Verb, gerund or present participle  # NEW
 
 1	S	NP VP
 1	VP	Verb NP
 1	VP	Verb Cc VP # NEW - from sentence (b), "wanted and ate.."
 1   VP  V0  # NEW - from sentence (c), intransitive verb phrase
 1   VP  Verb Sc S  # NEW - from sentence (d), subordinating conjunction
-5	NP	Det Noun
-1	NP	NP PP
+1   VP  Verb PP  # NEW - from sentence (g), prepositional phrase
+1   VP  Vbz ADJP  # NEW - from sentence (h)
+1   VP  Vbz Vbg NP  # NEW - from sentence (i), "is XXing YYY"
+1   VP  Vbz NP  # NEW - from sentence (j), "is YYY"
+1	NP	Det Noun
+2	NP	NP PP
 1   NP  Nnp  # NEW - from sentence (a), personal name (Sally)
 1   NP  NP Cc NP  # NEW - from sentence (b), coordinating conjunction
 1   NP  Prp  # NEW - from sentence (e), personal pronoun
 1   NP  NP Sc S  # NEW - from sentence (e)
+1   NP  Det ADJP Noun   # NEW - from sentence(f+h)
 1	PP	Prep NP
-5	Noun	Adj Noun
+1	Noun	Adj Noun
+1   ADVP  Rb  # NEW - from sentence (f)
+2   ADVP  Rb ADVP  # NEW - from sentence (f)
+1   ADJP  Adj  # NEW - from sentence (h)
+1   ADJP  ADVP Adj  # NEW - from sentence (h)
 
 # Vocabulary.  Your program can see that "ate" is a terminal
 # symbol because there exists no rule for rewriting it.
@@ -63,7 +77,8 @@
 2	Verb	understood
 1	Verb	pickled
 1	Verb	thought # NEW - from sentence (d)
-100	Verb	perplexed   # NEW - from sentence (e)
+1	Verb	perplexed   # NEW - from sentence (e)
+1	Verb	worked   # NEW - from sentence (g)
 
 1	V0	sighed  # NEW - from sentence (c), intransitive verb phrase
 
@@ -71,16 +86,19 @@
 1	Det	a
 1	Det	every
 
-70	Noun	president
-40	Noun	sandwich
+7	Noun	president
+4	Noun	sandwich
 6	Noun	pickle
 7	Noun	chief of staff
 3	Noun	floor
+1	Noun	proposal    # NEW - from sentence (g)
+1	Noun	desk    # NEW - from sentence (g)
 
 5	Adj	fine
 2	Adj	delicious
 2	Adj	perplexed
 1	Adj	pickled
+1   Adj lazy    # NEW - from sentence (h)
 
 1	Prep	with
 1	Prep	on
@@ -94,3 +112,9 @@
 1   Sc  that    # NEW - from sentence (d), subordinating conjunction
 
 1   Prp  it    # NEW - from sentence (e), personal pronoun
+
+1   Rb  very    #NEW - from sentence (f), adverb
+
+1   Vbz  is    #NEW - from sentence (h), Verb, 3rd person singular present
+
+1   Vbg  eating    #NEW - from sentence (i), Verb, gerund or present participle
