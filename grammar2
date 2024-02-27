@@ -33,7 +33,7 @@
 #    Adj = adjective
 #    Nnp = proper noun  # NEW
 #    Cc = coordinating conjunction  # NEW
-#    V0 = intransitive verb phrase  # NEW
+#    V0 = intransitive verb  # NEW
 #    Sc = subordinating conjunction  # NEW
 #    Prp = personal pronoun  # NEW
 #    Rb = adverb  # NEW
@@ -80,7 +80,7 @@
 1	Verb	perplexed   # NEW - from sentence (e)
 1	Verb	worked   # NEW - from sentence (g)
 
-1	V0	sighed  # NEW - from sentence (c), intransitive verb phrase
+1	V0	sighed  # NEW - from sentence (c), intransitive verb
 
 1	Det	the
 1	Det	a
