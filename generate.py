@@ -42,9 +42,9 @@ class PCFG(object):
     def gen(self, symbol, gen_tree=False, debug=False, father=None):
         if self.is_terminal(symbol): 
             if debug:
-                return symbol
-            else:
                 return f'({father}, {symbol})'
+            else:
+                return symbol
         else:
             expansion = self.random_expansion(symbol)
             result = " ".join(self.gen(s,gen_tree, debug, symbol) for s in expansion)
@@ -55,7 +55,7 @@ class PCFG(object):
             return result
 
     def random_sent(self, gen_tree=False, debug=False):
-        return self.gen("ROOT", gen_tree, debug=False)
+        return self.gen("ROOT", gen_tree, debug)
 
     def random_expansion(self, symbol):
         """
@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
     import sys
     args = docopt(__doc__)
-    # args = {'<grammer_file>': 'grammar2', '-n': 3, '-t': True}
+    # args = {'<grammer_file>': 'grammar2', '-n': 3, '-t': True, '-d': False}
     pcfg = PCFG.from_file(args['<grammer_file>'])
     num_of_sentences = int(args['-n'])
     gen_tree = args['-t']

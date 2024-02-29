@@ -1,3 +1,5 @@
+# c g
+
 # Symbols in the grammar are case-sensitive.
 # 
 # This grammar uses a convention that
@@ -19,7 +21,7 @@
 
 # Rules for creating full sentences.
 
-2	ROOT	S .
+3	ROOT	S .
 1	ROOT	S !
 1	ROOT	is it true that S ?
 
@@ -58,16 +60,16 @@
 1   NP  Prp
 1   NP  NP Sc S
 1   NP  Det ADJP NN # NEW - Part 4. modifications of Noun
-3   NP  Det Nount RELCT # NEW - Part 4 (c)
-2   NP  Det Nounp RELCP # NEW - Part 4 (c)
+4  NP  Det Nount RELCT # NEW - Part 4 (c)
+3   NP  Det Nounp RELCP # NEW - Part 4 (c)
 2   NP  Nnp RELCP # NEW - Part 4 (c)
-2   NN  Nount  # NEW - Part 4 (c)
-2   NN  Nounp  # NEW - Part 4 (c)
-1	NN	Adj NN  # NEW - Part 4 (c)
-4   RELCP    Relp_p VP  # NEW - Part 4 (c)
-1   RELCP    Relp_p S  # NEW - Part 4 (c)
-4   RELCT    Relp_t VP  # NEW - Part 4 (c)
-1   RELCT    Relp_t S  # NEW - Part 4 (c)
+2   NN  Nount  # NEW - Part 4 (c). modifications of Noun
+2   NN  Nounp  # NEW - Part 4 (c). modifications of Noun
+1	NN	Adj NN  # NEW - Part 4. modifications of Noun
+4   RELCP    Relpp VP  # NEW - Part 4 (c)
+1   RELCP    Relpp S  # NEW - Part 4 (c)
+4   RELCT    Relpt VP  # NEW - Part 4 (c)
+1   RELCT    Relpt S  # NEW - Part 4 (c)
 1	PP	Prep NP
 2   ADVP  Rb
 1   ADVP  Rb ADVP
@@ -89,20 +91,20 @@
 1	Verb	perplexed
 1	Verb	worked
 
-1	V0	sighed
+4	V0	sighed
 1	V0	ate  # NEW - Part 4 (c)
 
 2	Det	the
 2	Det	a
 1	Det	every
 
-2	Nounp	president
-2	Nounp	chief of staff
-2	Nount	sandwich
-2	Nount	pickle
-1	Nount	floor
-1	Nount	proposal
-1	Nount	desk
+2	Nounp	president   # NEW - Part 4. modifications of Noun
+2	Nounp	chief of staff   # NEW - Part 4. modifications of Noun
+2	Nount	sandwich   # NEW - Part 4. modifications of Noun
+2	Nount	pickle   # NEW - Part 4. modifications of Noun
+1	Nount	floor   # NEW - Part 4. modifications of Noun
+1	Nount	proposal   # NEW - Part 4. modifications of Noun
+1	Nount	desk   # NEW - Part 4. modifications of Noun
 
 5	Adj	fine
 2	Adj	delicious
@@ -129,8 +131,8 @@
 
 1   Vbg  eating
 
-1   Relp_p    that  # NEW - Part 4 (c)
-2   Relp_p    who  # NEW - Part 4 (c)
+1   Relpp    that  # NEW - Part 4 (c)
+2   Relpp    who  # NEW - Part 4 (c)
 
-1   Relp_t    that  # NEW - Part 4 (c)
-1   Relp_t    which  # NEW - Part 4 (c)
+1   Relpt    that  # NEW - Part 4 (c)
+1   Relpt    which  # NEW - Part 4 (c)
