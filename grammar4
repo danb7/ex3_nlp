@@ -60,7 +60,7 @@
 1   NP  Prp
 1   NP  NP Sc S
 1   NP  Det ADJP NN # NEW - Part 4. modifications of Noun
-4  NP  Det Nount RELCT # NEW - Part 4 (c)
+4   NP  Det Nount RELCT # NEW - Part 4 (c)
 3   NP  Det Nounp RELCP # NEW - Part 4 (c)
 2   NP  Nnp RELCP # NEW - Part 4 (c)
 2   NN  Nount  # NEW - Part 4 (c). modifications of Noun
@@ -68,8 +68,59 @@
 1	NN	Adj NN  # NEW - Part 4. modifications of Noun
 4   RELCP    Relpp VP  # NEW - Part 4 (c)
 1   RELCP    Relpp S  # NEW - Part 4 (c)
+4   RELCP    Sc VP  # NEW - Part 4 (g)
+1   RELCP    Sc S  # NEW - Part 4 (g)
 4   RELCT    Relpt VP  # NEW - Part 4 (c)
 1   RELCT    Relpt S  # NEW - Part 4 (c)
+4   RELCT    Sc VP  # NEW - Part 4 (g)
+1   RELCT    Sc S  # NEW - Part 4 (g)
+
+100   ROOT   I wonder WH SQ ?
+1   SQ  S
+3   SQ  VP
+3   SQ  VP PP
+# 4   NP  Det NN Comma APP Comma
+# 4   NP  Det ADJP NN Comma APP Comma
+# 4   NP  Nnp Comma APP Comma
+# 1   APP APP Comma APP
+# 2   APP YEARSOLD
+# 1   APP Nnp
+# 1   APP Relpp 
+# 1   APP Relpt
+# 1   APP_F YEARSOLD Comma
+# 1   APP_F RELCP Comma
+# 1   APP_F RELCT Comma 
+# 7   NP  NPAPP_P
+# 4   NPAPP_P  APPOS_P Comma
+# 1   APPOS_P   NPAPP_P Comma APP_P
+# 1   NPAPP_P Nnp 
+# 1   NPAPP_P Det Nounp 
+# 1   NPAPP_P Det ADJP Nounp
+# 1   APP_P   Det Nounp
+# 1   APP_P   Nnp
+# 1   APP_P   Det ADJP Nounp
+# 1   APP_P   YEARSOLD
+# 1   APP_P   Relpp VP
+# 1   APP_P   Relpp S
+
+# 5   NP  APPOS Comma
+# 1   APPOS   NP Comma APP
+# 5   NP  NPAPP Comma
+# 1   NPAPP  Nnp Comma APPP
+# 5   NPAPP  Noun Comma APP
+# 1   APPP    Det Nounp
+# 1   APPP    Det ADJP Nounp 
+# 1   APP_P   YEARSOLD 
+# 1   APP_P   Relpp VP
+# 1   APP_P   Relpp S
+# 1   APP_P   Relpt VP
+# 1   APP_T   Relpt S
+# 1   Comma ,
+# 1   YEARSOLD Num years old
+# 1   Num 25
+# 1   Num 59
+# 1   Num 18
+# 1   Num 72
 1	PP	Prep NP
 2   ADVP  Rb
 1   ADVP  Rb ADVP
@@ -131,8 +182,8 @@
 
 1   Vbg  eating
 
-1   Relpp    that  # NEW - Part 4 (c)
+# 1   Relpp    that  # NEW - Part 4 (c) [remove again in (g)]
 2   Relpp    who  # NEW - Part 4 (c)
 
-1   Relpt    that  # NEW - Part 4 (c)
+# 1   Relpt    that  # NEW - Part 4 (c) [remove again in (g)]
 1   Relpt    which  # NEW - Part 4 (c)
