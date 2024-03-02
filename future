@@ -1,0 +1,44 @@
+# future appositives. remember that that cant follow Comma
+
+# 4   NP  Det NN Comma APP Comma
+# 4   NP  Det ADJP NN Comma APP Comma
+# 4   NP  Nnp Comma APP Comma
+# 1   APP APP Comma APP
+# 2   APP YEARSOLD
+# 1   APP Nnp
+# 1   APP Relpp 
+# 1   APP Relpt
+# 1   APP_F YEARSOLD Comma
+# 1   APP_F RELCP Comma
+# 1   APP_F RELCT Comma 
+# 7   NP  NPAPP_P
+# 4   NPAPP_P  APPOS_P Comma
+# 1   APPOS_P   NPAPP_P Comma APP_P
+# 1   NPAPP_P Nnp 
+# 1   NPAPP_P Det Nounp 
+# 1   NPAPP_P Det ADJP Nounp
+# 1   APP_P   Det Nounp
+# 1   APP_P   Nnp
+# 1   APP_P   Det ADJP Nounp
+# 1   APP_P   YEARSOLD
+# 1   APP_P   Relpp VP
+# 1   APP_P   Relpp S
+
+# 5   NP  APPOS Comma
+# 1   APPOS   NP Comma APP
+# 5   NP  NPAPP Comma
+# 1   NPAPP  Nnp Comma APPP
+# 5   NPAPP  Noun Comma APP
+# 1   APPP    Det Nounp
+# 1   APPP    Det ADJP Nounp 
+# 1   APP_P   YEARSOLD 
+# 1   APP_P   Relpp VP
+# 1   APP_P   Relpp S
+# 1   APP_P   Relpt VP
+# 1   APP_T   Relpt S
+# 1   Comma ,
+# 1   YEARSOLD Num years old
+# 1   Num 25
+# 1   Num 59
+# 1   Num 18
+# 1   Num 72
