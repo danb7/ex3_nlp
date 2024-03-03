@@ -1,4 +1,4 @@
-# c g
+# c d
 
 # Symbols in the grammar are case-sensitive.
 # 
@@ -77,13 +77,13 @@
 4   RELCT    Relpt VP  # NEW - Part 4 (c)
 1   RELCT    Relpt S  # NEW - Part 4 (c)
 
-1   EQ  Ws   S
-1   EQ  Wvp   VP
-1   EQ  Wsp   S Prep
-1   EQ  Wns Nount S
-1   EQ  Wns Nount S Prep
-1   EQ  Wadj Adj NP is
-1   EQ  Wsp NP is
+1   EQ  Ws   S  # NEW - part 4 (d)
+1   EQ  Wvp   VP  # NEW - part 4 (d)
+1   EQ  Wsp   S Prep  # NEW - part 4 (d)
+1   EQ  Wns Nount S  # NEW - part 4 (d)
+1   EQ  Wns Nount S Prep  # NEW - part 4 (d)
+1   EQ  Wadj Adj NP is  # NEW - part 4 (d)
+1   EQ  Wsp NP is  # NEW - part 4 (d)
 
 1	PP	Prep NP
 2   ADVP  Rb
@@ -152,20 +152,20 @@
 1   Relpt    that  # NEW - Part 4 (c)
 1   Relpt    which  # NEW - Part 4 (c)
 
-2   Ws  what
-2   Ws  where
-1   Ws  when
-1   Ws  why
-1   Ws  how
+2   Ws  what  # NEW - part 4 (d)
+2   Ws  where  # NEW - part 4 (d)
+1   Ws  when  # NEW - part 4 (d)
+1   Ws  why  # NEW - part 4 (d)
+1   Ws  how  # NEW - part 4 (d)
 
-1   Wvp what
-1   Wvp who
+1   Wvp what  # NEW - part 4 (d)
+1   Wvp who  # NEW - part 4 (d)
 
-1   Wsp what
-1   Wsp where
-2   Wsp who
+1   Wsp what  # NEW - part 4 (d)
+1   Wsp where  # NEW - part 4 (d)
+2   Wsp who  # NEW - part 4 (d)
 
-1   Wns what
-1   Wns which
+1   Wns what  # NEW - part 4 (d)
+1   Wns which  # NEW - part 4 (d)
 
-1   Wadj    how
+1   Wadj    how  # NEW - part 4 (d)
