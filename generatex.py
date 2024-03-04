@@ -103,6 +103,8 @@ class PCFG(object):
         processed_sentence = re.sub(r'\s+(?=[!?.])', '', processed_sentence)
         # remove whitespaces before comma
         processed_sentence = re.sub(r' ,', ',', processed_sentence)
+        # handling possessive 's
+        processed_sentence = re.sub(r" 's", "'s", processed_sentence)
 
         return processed_sentence
 

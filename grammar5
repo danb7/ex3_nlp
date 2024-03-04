@@ -21,9 +21,11 @@
 
 3	ROOT	S .
 1	ROOT	S !
-10	ROOT	is it true that S ?
+1	ROOT	is it true that S ?
 1   ROOT  I wonder EQ .
 1   ROOT  " S . " NP said .    # NEW - part 5. quotes
+1   ROOT    CP Comma S .     #  NEW - part 5. complemetizer phrase
+1   ROOT    S Comma CP .    #  NEW - part 5. complemetizer phrase
 
 # The basic grammar rules.  Here's what the abbreviations stand for:
 #    S  = sentence
@@ -47,27 +49,40 @@
 #    RELCT = relative clause, thing
 #    Relpp = relative pronoun, person
 #    Relpt = relative pronoun, thing
-#    EQ = embedded questions
+#    EQ = embedded questions    #   NEW
+#    CP = complemetizer phrase  #   NEW
+#    Posp = possessive pronoun  #   NEW
 
 1	S	NP VP
 2	VP	Verb NP
+1	VP	Vd NP NP
 1	VP	Verb Cc VP
 2   VP  V0
 1   VP  Verb Sc S
 2   VP  Verb PP
 2   VP  Vbz ADJP
+1   VP  Vbz Posp
 1   VP  Vbz Vbg NP
 1   VP  Vbz NP
 6	NP	Det NN
 1	NP	NP PP
 2   NP  Nnp
 1   NP  NP Cc NP
-1   NP  Prp
+5   NP  Prp
 1   NP  NP Sc S
 1   NP  Det ADJP NN
-3   NP  Det Nount RELCT
+2   NP  Det Nount RELCT
 2   NP  Det Nounp RELCP
 1   NP  Nnp RELCP
+1   NP  Det NN Comma APP Comma  # NEW - part 5 (appositives)
+1   NP  Det ADJP NN Comma APP Comma # NEW - part 5 (appositives)
+1   NP  Nnp Comma APP Comma # NEW - part 5 (appositives)
+1   APP APP Comma APP   # NEW - part 5 (appositives)
+1   APP Nnp # NEW - part 5 (appositives)
+2   APP RELCP   # NEW - part 5 (appositives)
+2   APP RELCT   # NEW - part 5 (appositives)
+2   APP YEARSOLD    # NEW - part 5 (appositives)
+1   YEARSOLD Num years old  # NEW - part 5 (appositives)
 2   NN  Nount
 2   NN  Nounp
 1	NN	Adj NN
@@ -75,7 +90,6 @@
 1   RELCP    Relpp S
 4   RELCT    Relpt VP
 1   RELCT    Relpt S
-
 1   EQ  Ws   S
 1   EQ  Wvp   VP
 1   EQ  Wsp   S Prep
@@ -83,12 +97,12 @@
 1   EQ  Wns Nount S Prep
 1   EQ  Wadj Adj NP is
 1   EQ  Wsp NP is
-
 1	PP	Prep NP
-2   ADVP  Rb
+3   ADVP  Rb
 1   ADVP  Rb ADVP
-2   ADJP  Adj
+3   ADJP  Adj
 1   ADJP  ADVP Adj
+1   CP  Comp S  #  NEW - part 5. complemetizer phrase
 
 # Vocabulary.  Your program can see that "ate" is a terminal
 # symbol because there exists no rule for rewriting it.
@@ -96,42 +110,56 @@
 # terminals, like "chief of staff") is called a "preterminal."  Notice 
 # that a preterminal is a special kind of nonterminal.
 
-4	Verb	ate
-3	Verb	wanted
-3	Verb	kissed
+2	Verb	ate
+2	Verb	wanted
+2	Verb	kissed
 2	Verb	understood
 1	Verb	pickled
 1	Verb	thought
 1	Verb	perplexed
 1	Verb	worked
+1	Verb	suggested
+1	Verb	help    # NEW - part 5
+2	Verb	love    # NEW - part 5
 
-4	V0	sighed
+2	V0	sighed
 1	V0	ate
+1	V0	spoke   # NEW - part 5
+
+1	Vd	gave
+1	Vd	sent
+1	Vd	showed
 
 2	Det	the
-20	Det	a
+2	Det	a
 1	Det	every
+4	Det	my  # NEW - part 5 (vowels)
+4	Det	your    # NEW - part 5 (vowels)
 
-2	Nounp	president
-2	Nounp	chief of staff
+1	Nounp	president
+1	Nounp	chief of staff
+1	Nounp	ambassador  # NEW - part 5 (vowels)
+1	Nounp	officer # NEW - part 5 (vowels)
+1	Nounp	manager # NEW - part 5
 2	Nount	sandwich
 2	Nount	pickle
 1	Nount	floor
 1	Nount	proposal
 1	Nount	desk
-10	Nounp	ambassador  # NEW - part 5 (vowels)
-10	Nounp	officer # NEW - part 5 (vowels)
-10	Nount	apple   # NEW - part 5 (vowels)
-10	Nount	umbrella    # NEW - part 5 (vowels)
-10	Nount	ice cream   # NEW - part 5 (vowels)
+1	Nount	apple   # NEW - part 5 (vowels)
+1	Nount	umbrella    # NEW - part 5 (vowels)
+1	Nount	ice cream   # NEW - part 5 (vowels)
+1	Nount	book   # NEW - part 5
+1	Nount	fruit   # NEW - part 5
+1	Nount	pizza   # NEW - part 5
 
-5	Adj	fine
+3	Adj	fine
 2	Adj	delicious
 2	Adj	perplexed
 1	Adj	pickled
 1   Adj lazy
-10  Adj elegant # NEW - part 5 (vowels)
-10   Adj angry   # NEW - part 5 (vowels)
+1   Adj elegant # NEW - part 5 (vowels)
+1   Adj angry   # NEW - part 5 (vowels)
 
 3	Prep	with
 1	Prep	on
@@ -139,18 +167,27 @@
 1	Prep	in
 
 1   Nnp Sally
+1   Nnp John    # NEW - part 5
+1   Nnp Emily   # NEW - part 5
+1   Nnp Michael # NEW - part 5
+1   Nnp Brian   # NEW - part 5
+1   Nnp Arthur  # NEW - part 5
 
 1   Cc  and
 
 1   Sc  that
 
 1   Prp  it
+1   Prp  he
+1   Prp  she
 
 1   Rb  very
 
 1   Vbz  is
 
 1   Vbg  eating
+1   Vbg  kissing
+1   Vbg  taking
 
 1   Relpp    that
 2   Relpp    who
@@ -176,18 +213,19 @@
 
 1   Wadj    how
 
-# NEW
-4   NP  Det NN Comma APP Comma
-4   NP  Det ADJP NN Comma APP Comma
-4   NP  Nnp Comma APP Comma
-1   APP APP Comma APP
-2   APP YEARSOLD
-1   APP Nnp
-2   APP RELCP 
-1   APP RELCT
-1   Comma ,
-1   YEARSOLD Num years old
-1   Num 25
-1   Num 59
-1   Num 18
-1   Num 72
+1   Comma , # NEW - part 5 (appositives)
+
+1   Num 25  # NEW - part 5 (appositives)
+1   Num 59  # NEW - part 5 (appositives)
+1   Num 18  # NEW - part 5 (appositives)
+1   Num 72  # NEW - part 5 (appositives)
+
+1   Comp    since   #  NEW - part 5. complemetizer phrase
+1   Comp    if  #  NEW - part 5. complemetizer phrase
+1   Comp    although    #  NEW - part 5. complemetizer phrase
+1   Comp    because #  NEW - part 5. complemetizer phrase
+
+1   NP  Nnp 's NN   #  NEW - part 5. possessives'
+
+1   Posp    mine    #  NEW - part 5. possessives
+1   Posp    yours   #  NEW - part 5. possessives
