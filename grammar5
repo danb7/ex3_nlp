@@ -22,10 +22,12 @@
 3	ROOT	S .
 1	ROOT	S !
 1	ROOT	is it true that S ?
-1   ROOT  I wonder EQ .
-1   ROOT  " S . " NP said .    # NEW - part 5. quotes
+1   ROOT    I wonder EQ .
+1   ROOT    " S . " NP said .    # NEW - part 5. quotes
 1   ROOT    CP Comma S .     #  NEW - part 5. complemetizer phrase
 1   ROOT    S Comma CP .    #  NEW - part 5. complemetizer phrase
+1   ROOT    S TLP . #   NEW - part 5. locations and times
+1   ROOT    TLP Comma S .   #   NEW - part 5. locations and times
 
 # The basic grammar rules.  Here's what the abbreviations stand for:
 #    S  = sentence
@@ -52,6 +54,18 @@
 #    EQ = embedded questions    #   NEW
 #    CP = complemetizer phrase  #   NEW
 #    Posp = possessive pronoun  #   NEW
+#    TLP = time or location phrase  #   NEW
+#    LOCP = location phrase  #   NEW
+#    TIMEP = time phrase  #   NEW
+#    LOC = location  #   NEW 
+#    DATE = date  #   NEW
+#    Preplt = preposition for location or time  #   NEW
+#    Place = place  #   NEW
+#    Specifictime = specific time of day  #   NEW
+#    Prepday = prepossition for day and date  #   NEW
+#    Dayofweek = day name  #   NEW
+#    Month = month name  #   NEW
+#    Datenum = date day number  #   NEW
 
 1	S	NP VP
 2	VP	Verb NP
@@ -68,7 +82,7 @@
 1	NP	NP PP
 2   NP  Nnp
 1   NP  NP Cc NP
-5   NP  Prp
+2   NP  Prp
 1   NP  NP Sc S
 1   NP  Det ADJP NN
 2   NP  Det Nount RELCT
@@ -103,6 +117,16 @@
 3   ADJP  Adj
 1   ADJP  ADVP Adj
 1   CP  Comp S  #  NEW - part 5. complemetizer phrase
+1   TLP LOCP TIMEP  #   NEW - part 5. locations and times
+1   TLP TIMEP LOCP  #   NEW - part 5. locations and times
+1   TLP TIMEP   #   NEW - part 5. locations and times
+1   TLP LOCP    #   NEW - part 5. locations and times
+1   LOCP    Preplt LOC  #   NEW - part 5. locations and times
+1   LOC Det Place #   NEW - part 5. locations and times
+1   TIMEP   Preplt Specifictime #   NEW - part 5. locations and times
+1   TIMEP   Prepday Dayofweek   #   NEW - part 5. locations and times
+1   TIMEP   Prepday DATE    #   NEW - part 5. locations and times
+1   DATE    Month Datenum   #   NEW - part 5. locations and times
 
 # Vocabulary.  Your program can see that "ate" is a terminal
 # symbol because there exists no rule for rewriting it.
@@ -119,8 +143,8 @@
 1	Verb	perplexed
 1	Verb	worked
 1	Verb	suggested
-1	Verb	help    # NEW - part 5
-2	Verb	love    # NEW - part 5
+1	Verb	helped    # NEW - part 5
+2	Verb	loved    # NEW - part 5
 
 2	V0	sighed
 1	V0	ate
@@ -161,7 +185,7 @@
 1   Adj elegant # NEW - part 5 (vowels)
 1   Adj angry   # NEW - part 5 (vowels)
 
-3	Prep	with
+1	Prep	with
 1	Prep	on
 1	Prep	under
 1	Prep	in
@@ -229,3 +253,35 @@
 
 1   Posp    mine    #  NEW - part 5. possessives
 1   Posp    yours   #  NEW - part 5. possessives
+
+1   Place   office  #   NEW - part 5. locations and times
+1   Place   house   #   NEW - part 5. locations and times
+1   Place   park    #   NEW - part 5. locations and times
+
+1   Preplt at   #   NEW - part 5. locations and times
+
+1   Prepday   on    #   NEW - part 5. locations and times
+
+1   Specifictime    Hour : Minute am    #   NEW - part 5. locations and times
+1   Specifictime    Hour : Minute pm    #   NEW - part 5. locations and times
+
+1   Hour    12  #   NEW - part 5. locations and times
+1   Hour    10  #   NEW - part 5. locations and times
+1   Hour    08  #   NEW - part 5. locations and times
+
+1   Minute  15  #   NEW - part 5. locations and times
+1   Minute  30  #   NEW - part 5. locations and times
+1   Minute  45  #   NEW - part 5. locations and times
+1   Minute  00  #   NEW - part 5. locations and times
+
+1   Dayofweek   Sunday  #   NEW - part 5. locations and times
+1   Dayofweek   Thursday    #   NEW - part 5. locations and times
+1   Dayofweek   Saturday    #   NEW - part 5. locations and times
+
+1   Datenum 19  #   NEW - part 5. locations and times
+1   Datenum 4   #   NEW - part 5. locations and times
+1   Datenum 12  #   NEW - part 5. locations and times
+
+1   Month December  #   NEW - part 5. locations and times
+1   Month February  #   NEW - part 5. locations and times
+1   Month June  #   NEW - part 5. locations and times

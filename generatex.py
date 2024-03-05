@@ -105,6 +105,8 @@ class PCFG(object):
         processed_sentence = re.sub(r' ,', ',', processed_sentence)
         # handling possessive 's
         processed_sentence = re.sub(r" 's", "'s", processed_sentence)
+        # removing whitespace in specific time
+        processed_sentence = re.sub(r' : ', ':', processed_sentence)
 
         return processed_sentence
 
