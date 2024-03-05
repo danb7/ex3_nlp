@@ -34,7 +34,7 @@ In this part we extended our grammar in various interseting ways.
 The file ``generate.py`` generate sentences based on our basic PCFG rules.  
 The file ``generatex.py`` generate sentences after post process.
 
-The files runs in the same way. they both get grammar to work on, and some additional aarguments as described below:  
+The files runs in the same way. they both get grammar to work on, and some additional aarguments as described below:
 ### Usage
 ```
 Usage:
